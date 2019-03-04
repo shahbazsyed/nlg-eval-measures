@@ -1,5 +1,5 @@
-six==1.11.0
-scipy==1.1.0
-numpy==1.15.4
 nltk==3.4
+scipy==1.1.0
+six==1.11.0
+numpy==1.15.4
 rouge==0.3.1

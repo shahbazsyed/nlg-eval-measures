@@ -29,10 +29,15 @@ def _JS_divergence(peer_distribution, model_distribution):
         return 0.
     return js
 
-def compute_jensen_shannon_divergence(peer, model, as_ngrams=2):
-    peer_distribution = preprocessing.compute_term_frequency_in_text(peer,as_ngrams)
-    model_distribution = preprocessing.compute_term_frequency_in_text(model,as_ngrams)
-    avg = 0.
-    avg = _JS_divergence(peer_distribution, model_distribution)
-    return avg
 
+class JsdScorer():
+
+    def compute_score(self, peer, model, as_ngrams=2):
+        peer_distribution = preprocessing.compute_term_frequency_in_text(peer,as_ngrams)
+        model_distribution = preprocessing.compute_term_frequency_in_text(model,as_ngrams)
+        avg = 0.
+        avg = _JS_divergence(peer_distribution, model_distribution)
+        return avg
+    
+    def method(self):
+        return "JSD"
